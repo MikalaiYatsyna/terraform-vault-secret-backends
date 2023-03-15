@@ -1,16 +1,16 @@
 variable "vault_address" {
   type        = string
-  description = "Vault http address"
+  description = "Vault https address"
 }
 
-variable "vault_role_name" {
+variable "vault_token_secret_id" {
   type        = string
-  description = "Name of vault role to use for AWS authentication"
+  description = "Id vault root token secret in AWS Secret Manager"
+  sensitive   = true
 }
 
 variable "backends" {
   type        = list(string)
   description = "List of backends to enable"
-
-  default = ["kv-v2", "database", "consul"]
+  default     = ["kv-v2", "database", "consul", "pki"]
 }
