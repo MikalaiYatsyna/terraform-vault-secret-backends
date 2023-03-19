@@ -1,15 +1,15 @@
 resource "vault_mount" "backend" {
   for_each = {
-    for index, backend in var.backends:
-      backend => backend
+    for index, backend in var.backends : backend.type => backend
   }
-  path     = each.value.type
-  type     = each.value.path
+  type = each.value.type
+  path = each.value.path
 }
 
 resource "vault_pki_secret_backend_root_cert" "pki" {
-  count = contains("pki", toset(var.backends.type))
-  backend              = var.backends[index(var.backends.*.type, "pki")]
+  count                = contains(toset(var.backends[*].type), "pki") ? 1 : 0
+  depends_on           = [vault_mount.backend]
+  backend              = var.backends[index(var.backends[*].type, "pki")].path
   common_name          = "cluster.local"
   ttl                  = "8760h"
   exclude_cn_from_sans = true

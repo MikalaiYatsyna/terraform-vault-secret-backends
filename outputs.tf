@@ -1,5 +1,5 @@
 output "backend" {
-  value = tomap({
-    vault_mount.backend[*].type = vault_mount.backend[*].path
-  })
+  value = {
+    for resource in vault_mount.backend : resource.type => resource.path
+  }
 }
