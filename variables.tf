@@ -10,12 +10,12 @@ variable "vault_token_secret_id" {
 }
 
 variable "backends" {
-  type        = list(object({
+  type = list(object({
     type = string
     path = string
   }))
   description = "List of backends to enable"
-  default     = [
+  default = [
     {
       type = "kv-v2"
       path = "kv"
