@@ -4,7 +4,11 @@ Terraform module to enable Vault backends
 <!-- BEGIN_TF_DOCS -->
 ## Requirements
 
-No requirements.
+| Name | Version |
+|------|---------|
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.7.5 |
+| <a name="requirement_aws"></a> [aws](#requirement\_aws) | 4.58.0 |
+| <a name="requirement_vault"></a> [vault](#requirement\_vault) | 3.13.0 |
 
 ## Providers
 
@@ -21,9 +25,9 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [vault_mount.backend](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/resources/mount) | resource |
-| [vault_pki_secret_backend_root_cert.pki](https://registry.terraform.io/providers/hashicorp/vault/latest/docs/resources/pki_secret_backend_root_cert) | resource |
-| [aws_secretsmanager_secret_version.root_token](https://registry.terraform.io/providers/hashicorp/aws/latest/docs/data-sources/secretsmanager_secret_version) | data source |
+| [vault_mount.backend](https://registry.terraform.io/providers/hashicorp/vault/3.13.0/docs/resources/mount) | resource |
+| [vault_pki_secret_backend_root_cert.pki](https://registry.terraform.io/providers/hashicorp/vault/3.13.0/docs/resources/pki_secret_backend_root_cert) | resource |
+| [aws_secretsmanager_secret_version.root_token](https://registry.terraform.io/providers/hashicorp/aws/4.58.0/docs/data-sources/secretsmanager_secret_version) | data source |
 
 ## Inputs
 
