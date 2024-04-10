@@ -7,7 +7,7 @@ Terraform module to enable Vault backends
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.7.5 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | 1.8.0 |
 | <a name="requirement_aws"></a> [aws](#requirement\_aws) | 5.42.0 |
 | <a name="requirement_vault"></a> [vault](#requirement\_vault) | 4.1.0 |
 ## Providers
